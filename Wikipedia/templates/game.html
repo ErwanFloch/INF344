@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+	<meta name = "description" content = "Développement d'une application Web pour jouer au jeu de type SauteCanton">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>game</title>
+  </head>
+
+
+  <body style = "background-color:lightgrey";>
+
+			
+{% extends "index.html" %}
+
+	  
+	 INF344 - TP: tous les chemins mènent à la philosophie 
+      {% block body %}
+		 <h1>Titre: 	{{ session.article }} </h1></br>
+		 <h2>Score: {{ session.score}}  </h2>
+		<p> <div id="Liens"> Liens:</div> </p>
+		
+		<!-- Question 3.6 -->
+		<form action="/move" method="post" id="main_form"> 
+			<ul>
+				<li>
+					<input type="radio" class="button" name="destination" value="{{ session.liens[0] }}" id="radio_link_1" checked="checked" /> <label class="button_label" for="radio_link_1"> {{ 	session.liens[0]}}</label>  
+				</li>
+		<br>
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[1] }}" id="radio_link_2" /> <label class="button_label" for="radio_link_2"> {{ session.liens[1]}}</label>  
+				</li>
+		<br>
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[2] }}" id="radio_link_3" /> <label class="button_label" for="radio_link_3"> {{ session.liens[2]}}</label>  
+				</li>
+		<br>		
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[3] }}" id="radio_link_4" /> <label class="button_label" for="radio_link_4"> {{ session.liens[3]}}</label>  
+				</li>
+		<br>		
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[4] }}" id="radio_link_5" /> <label class="button_label" for="radio_link_5"> {{ session.liens[4] }}</label>  
+				</li>
+		<br>						
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[5] }}" id="radio_link_6" /> <label class="button_label" for="radio_link_6"> {{ session.liens[5] }}</label>  
+				</li>
+		<br>						
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[6] }}" id="radio_link_7" /> <label class="button_label" for="radio_link_7"> {{ session.liens[6] }}</label>  
+				</li>
+		<br>						
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[7] }}" id="radio_link_8" /> <label class="button_label" for="radio_link_8"> {{ session.liens[7] }}</label>  
+				</li>
+		<br>		
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[8] }}" id="radio_link_9" /> <label class="button_label" for="radio_link_9"> {{ session.liens[8] }}</label>  
+				</li>		
+		<br>
+				<li>		<input type="radio" class="button" name="destination" value="{{ session.liens[9]}} " id="radio_link_10" /> <label class="button_label" for="radio_link_10"> {{ session.liens[9] }}</label>  
+				</li>	
+			
+		</ul>
+			<input type="hidden" name="game_hidden_input" id = "game_hidden_input" value="game_hidden_value" />
+		</form>
+		
+		<div class="button">
+				<button  type="submit" form ="main_form" id="main_form_button">Submit</button>
+		</div>		
+		
+		<a href="http://localhost:5000" >
+				<div class="button">
+				<button type="submit" id="new_game_button" >New game</button>
+				</div>
+		</a>
+      {% endblock %}
+	   </body>
+</html>
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+	<meta name = "description" content = "Développement d'une application Web pour jouer au jeu de type SauteCanton">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <title>Tous les chemins mènent à la philosophie</title>
+	
+  </head>
+  
+
+  
+  <body >
+    <header>
+			<h1>
+			INF344 - Données du web - TP: tous les chemins mènent à la philosophie </br>
+			</h1>
+	</header>
+	
+    {% block body %}
+      {# Début du bloc "body", dont vous devez modifier le contenu #}
+      <h1><p>{{ message }}</p></h1>	
+	  
+	 	<!-- Question 3.2 -->
+	<!--<form action ="/new_game" method="post" id="start_form" onsubmit="document.getElementById('start_form').style.display= 'none'">-->
+	<form action ="/new_game" method="post" id="start_form" >
+		<p>
+			<label for="start_page"> Start:  </label> <input type="text" name="start" id = "start_page"  />	
+			<input type="hidden" name="start_hidden_input" id = "start_hidden_input" value="start_hidden_input" /> 
+		</p>
+	</form>
+	
+      {# Fin du bloc "body" #}
+    {% endblock %}
+	
+	
+	<br>
+	 {% with messages = get_flashed_messages(with_categories=true) %}
+   {% if messages %}
+     <ul class="flashes">
+        {% for category, message in messages %}
+         <div class="alert alert-{{category}}" id ="message">{{ message | capitalize}}</div>
+        {% endfor %}
+    </ul>
+  {% endif %}
+ {% endwith %}
+  </body>
+</html>
