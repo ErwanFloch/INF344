@@ -1,0 +1,6 @@
+Two steps:
+
+i) Using Regex, extraction of the email adresses contained in a text file
+
+ii) Determination of the main topic of a sentence, e.g. the definitions found in Wikipedia. 
+    F1-score > 85%
